@@ -81,6 +81,7 @@ sonar-project.properties
 # developer
 logs
 deploy
+bes-lite-spring-boot-2.x-starter-9.5.2.008
 .DS_Store
 *.DS_Store
 
