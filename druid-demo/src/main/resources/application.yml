@@ -1,0 +1,25 @@
+server:
+  port: 8090
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  application:
+    name: db-pool-demo
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+
+logging:
+  config: config/logback-spring.xml
+  level:
+    com.example: debug
+    org.mybatis.spring: debug
+    org.springframework: debug
+

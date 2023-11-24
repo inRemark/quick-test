@@ -1,0 +1,979 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties",
+      "name": "server",
+      "type": "com.bes.enterprise.springboot.autoconfigure.BesProperties"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties",
+      "name": "server.bes",
+      "sourceMethod": "getBes()",
+      "type": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "name": "server.bes.accesslog",
+      "sourceMethod": "getAccesslog()",
+      "type": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Accesslog"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "name": "server.bes.gmssl",
+      "sourceMethod": "getGmssl()",
+      "type": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Gmssl"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "name": "server.bes.jdbc",
+      "sourceMethod": "getJdbc()",
+      "type": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "name": "server.bes.resource",
+      "sourceMethod": "getResource()",
+      "type": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Resource"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties",
+      "name": "server.compression",
+      "sourceMethod": "getCompression()",
+      "type": "com.bes.enterprise.springboot.autoconfigure.BesCompression"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties",
+      "name": "server.error",
+      "sourceMethod": "getError()",
+      "type": "org.springframework.boot.autoconfigure.web.ErrorProperties"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties",
+      "name": "server.http2",
+      "sourceMethod": "getHttp2()",
+      "type": "org.springframework.boot.web.server.Http2"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties",
+      "name": "server.servlet",
+      "sourceMethod": "getServlet()",
+      "type": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Servlet"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Servlet",
+      "name": "server.servlet.jsp",
+      "sourceMethod": "getJsp()",
+      "type": "org.springframework.boot.web.servlet.server.Jsp"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Servlet",
+      "name": "server.servlet.session",
+      "sourceMethod": "getSession()",
+      "type": "org.springframework.boot.web.servlet.server.Session"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.servlet.server.Session",
+      "name": "server.servlet.session.cookie",
+      "sourceMethod": "getCookie()",
+      "type": "org.springframework.boot.web.servlet.server.Session$Cookie"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties",
+      "name": "server.ssl",
+      "sourceMethod": "getSsl()",
+      "type": "org.springframework.boot.web.server.Ssl"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties",
+      "name": "server.address",
+      "description": "Network address to which the server should bind.",
+      "type": "java.net.InetAddress"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties",
+      "defaultValue": 8192,
+      "name": "server.app-read-buf-size",
+      "description": "Each connection that is opened up in BES get associated with a\n read ByteBuffer. This attribute controls the size of this buffer.\n By default this read buffer is sized at 8192 bytes.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties",
+      "defaultValue": 8192,
+      "name": "server.app-write-buf-size",
+      "description": "Each connection that is opened up in BES get associated with a\n write ByteBuffer. This attribute controls the size of this buffer.\n By default this write buffer is sized at 8192 bytes.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "defaultValue": 0,
+      "name": "server.bes.accept-count",
+      "description": "Maximum queue length for incoming connection requests when all possible request\n processing threads are in use.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Accesslog",
+      "defaultValue": true,
+      "name": "server.bes.accesslog.buffered",
+      "description": "Whether to buffer output such that it is flushed only periodically.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Accesslog",
+      "defaultValue": "logs",
+      "name": "server.bes.accesslog.directory",
+      "description": "Directory in which log files are created. Can be absolute or relative to\n the Bes base dir.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Accesslog",
+      "defaultValue": false,
+      "name": "server.bes.accesslog.enabled",
+      "description": "Enable access log.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Accesslog",
+      "defaultValue": ".yyyy-MM-dd",
+      "name": "server.bes.accesslog.file-date-format",
+      "description": "Date format to place in the log file name.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Accesslog",
+      "defaultValue": 10,
+      "name": "server.bes.accesslog.max-history-files",
+      "description": "This attribute is used to indicate the maximum number of historical\n access log files. If the number of locally retained access log files\n exceeds this limit, the oldest log file will be deleted.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Accesslog",
+      "defaultValue": "common",
+      "name": "server.bes.accesslog.pattern",
+      "description": "Format pattern for access logs.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Accesslog",
+      "defaultValue": "access_log",
+      "name": "server.bes.accesslog.prefix",
+      "description": "Log file name prefix.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Accesslog",
+      "defaultValue": false,
+      "name": "server.bes.accesslog.rename-on-rotate",
+      "description": "Whether to defer inclusion of the date stamp in the file name until rotate\n time.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Accesslog",
+      "defaultValue": false,
+      "name": "server.bes.accesslog.request-attributes-enabled",
+      "description": "Set request attributes for the IP address, Hostname, protocol, and port\n used for the request.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Accesslog",
+      "defaultValue": false,
+      "name": "server.bes.accesslog.rotatable-by-size",
+      "description": "Flag to determine if log rotation by size should occur. If set to true,\n then log file will rotate according to the size strategy.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Accesslog",
+      "defaultValue": true,
+      "name": "server.bes.accesslog.rotatable-by-time",
+      "description": "Flag to determine if log rotation by time should occur. If set to true,\n then log file will rotate according to the time strategy.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Accesslog",
+      "defaultValue": true,
+      "name": "server.bes.accesslog.rotate",
+      "description": "Whether to enable access log rotation.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Accesslog",
+      "defaultValue": 10458760,
+      "name": "server.bes.accesslog.rotation-size",
+      "description": "The maximum size of an access log file. If the access log exceeds this\n limit, a new access log file will be created. This value is only\n valid if the size rotation is turned on.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Accesslog",
+      "defaultValue": ".log",
+      "name": "server.bes.accesslog.suffix",
+      "description": "Log file name suffix.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "name": "server.bes.additional-tld-skip-patterns",
+      "description": "Comma-separated list of additional patterns that match jars to ignore for TLD\n scanning. The special '?' and '*' characters can be used in the pattern to\n match one and only one character and zero or more characters respectively.",
+      "type": "java.util.List<java.lang.String>"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "defaultValue": 3000,
+      "name": "server.bes.async-timeout",
+      "description": "The default timeout for asynchronous requests in milliseconds.\n If not specified, this attribute is set to the Servlet\n specification default of 30000 (30 seconds).",
+      "type": "java.lang.Long"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "defaultValue": "30s",
+      "name": "server.bes.background-processor-delay",
+      "description": "Delay between the invocation of backgroundProcess methods. If a duration suffix\n is not specified, seconds will be used.",
+      "type": "java.time.Duration"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "name": "server.bes.basedir",
+      "description": "Bes base directory. If not specified, a temporary directory is used.",
+      "type": "java.io.File"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "name": "server.bes.connection-upload-timeout",
+      "description": "Specifies the timeout, in milliseconds, to use while a data upload\n is in progress. This only takes effect if disableUploadTimeout is\n set to false.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "name": "server.bes.disable-upload-timeout",
+      "description": "This flag allows the servlet container to use a different, usually\n longer connection timeout during data upload. If not specified,\n this attribute is set to true which disables this longer timeout.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "name": "server.bes.dns-lookup-enabled",
+      "description": "Set to true if you want calls to request.getRemoteHost() to\n perform DNS lookups in order to return the actual host name of the\n remote client. Set to false to skip the DNS lookup and return the\n IP address in String form instead (thereby improving performance).",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Gmssl",
+      "name": "server.bes.gmssl.key-alias",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Gmssl",
+      "name": "server.bes.gmssl.key-password",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Gmssl",
+      "name": "server.bes.gmssl.key-store-file",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Gmssl",
+      "name": "server.bes.gmssl.key-store-password",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "defaultValue": "10\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}|192\\.168\\.\\d{1,3}\\.\\d{1,3}|169\\.254\\.\\d{1,3}\\.\\d{1,3}|127\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}|172\\.1[6-9]{1}\\.\\d{1,3}\\.\\d{1,3}|172\\.2[0-9]{1}\\.\\d{1,3}\\.\\d{1,3}|172\\.3[0-1]{1}\\.\\d{1,3}\\.\\d{1,3}",
+      "name": "server.bes.internal-proxies",
+      "description": "Regular expression matching trusted IP addresses.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": false,
+      "name": "server.bes.jdbc.access-to-underlying-connection-allowed",
+      "description": "If set to true, the raw physical connection to the database\n can be accessed. The default value is false.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": 0,
+      "name": "server.bes.jdbc.connection-leak-timeout-in-seconds",
+      "description": "Timeout in seconds before an  abandoned  connection can\n be removed. The default value is 0.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "name": "server.bes.jdbc.driver-class-name",
+      "description": "The name of the vendor-supplied JDBC driver class. This\n driver should implement the  java.sql.Driver interface.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": true,
+      "name": "server.bes.jdbc.enable-auto-commit-on-return",
+      "description": "If set to true, the connection will be auto commit on return.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": false,
+      "name": "server.bes.jdbc.enable-leakage-recovery",
+      "description": "If set to true, enable leak recovery.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": true,
+      "name": "server.bes.jdbc.enabled",
+      "description": "Whether to enable the jdbc resource.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": 0,
+      "name": "server.bes.jdbc.fetch-size",
+      "description": "By default, JDBC will retrieves N rows of records from the cursor every time a search is performed. This value\n is the default fetch size value. By setting the fetch size, you can change the total number of record rows\n extracted each time you interact with the database. The default value is 0, which specifies that use the default\n value of each driver.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": 300,
+      "name": "server.bes.jdbc.idle-timeout",
+      "description": "The maximum time, in seconds, that a connection can\n remain idle in  the pool. After this time, the implement\n action can close this connection. This  timeout value\n must be kept shorter than the database server side timeout\n value to prevent the accumulation of unusable connections\n in the  application. The default value is 300.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": 8,
+      "name": "server.bes.jdbc.initial-pool-size",
+      "description": "The minimum and initial number of connections maintained in the pool.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "name": "server.bes.jdbc.isolation-level",
+      "description": "The transaction-isolation-level  on the pooled database\n connections. This option does not have a default value.\n If not specified, the pool operates  with  the  default\n isolation level  that the JDBC driver provides. You can\n set a desired isolation level using one of the standard\n transaction isolation  levels: NONE, READ_UNCOMMITTED,\n READ_COMMITTED,REPEATABLE_READ,SERIALIZABLE.Applications\n that change the isolation level on a pooled  connection\n programmatically  risk  polluting  the pool. This could\n lead to program errors.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "name": "server.bes.jdbc.jndi-name",
+      "description": "The JNDI name of this JDBC resource.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": true,
+      "name": "server.bes.jdbc.log-abandoned",
+      "description": "If set to true, will output the leak connection message.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": false,
+      "name": "server.bes.jdbc.log-failed",
+      "description": "If set to true, it would show warning when the SQL was failed.\n The default value is false. In addition, it was effective when\n sql-trace was true.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": false,
+      "name": "server.bes.jdbc.log-slow",
+      "description": "If set to true, it would show warning when the SQL spends\n too much time. The default value is false. it\n was effective when sql-trace was true.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": 0,
+      "name": "server.bes.jdbc.max-connection-age",
+      "description": "The maximum lifetime in  seconds  of a connection. After\n this time is exceeded the connection will fail the  next\n activation, passivation or validation test. A  value  of\n zero  or  less  means  the  connection  has  an infinite\n lifetime.The default value is 0.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": 32,
+      "name": "server.bes.jdbc.max-pool-size",
+      "description": "The maximum number of connections  that can be created.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": 1000,
+      "name": "server.bes.jdbc.max-queries",
+      "description": "The number of SQL be traced when SQL trace be enabled. The\n default value is 1000. In addition, it was effective when\n sql-trace was true.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": 60000,
+      "name": "server.bes.jdbc.max-wait-time-in-millis",
+      "description": "The amount of time, in milliseconds, that a caller will\n wait before a connection timeout is sent.  The  default\n is 60000 (60 seconds). A value of 0 forces  the  caller\n to wait indefinitely.",
+      "type": "java.lang.Long"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": 0,
+      "name": "server.bes.jdbc.min-idle",
+      "description": "The minimum number of connections that can be remain\n idle in the pool, without extra ones being released, or\n zero to create none.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "name": "server.bes.jdbc.password",
+      "description": "Specifies the password for connecting to  the database.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": false,
+      "name": "server.bes.jdbc.pool-prepared-statements",
+      "description": "If set to true, the cache preparedstatement will be enabled.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": false,
+      "name": "server.bes.jdbc.pool-statements",
+      "description": "If set to true, the cache statement will be enabled.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "name": "server.bes.jdbc.properties",
+      "type": "java.util.List<com.bes.enterprise.web.util.descriptor.besweb.Property>"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "name": "server.bes.jdbc.resource-type",
+      "description": "The jdbc resource type. Optional resourcetype value:\n   java.sql.Driver\n   javax.sql.DataSource\n   javax.sql.XADataSource\n   javax.sql.ConnectionPoolDataSource.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": true,
+      "name": "server.bes.jdbc.rollback-on-return",
+      "description": "If set to true, the connection will be return on rollback.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": false,
+      "name": "server.bes.jdbc.sql-trace",
+      "description": "If set to true, the SQL trace would be enabled. You could\n see the trace report at jdbc resource monitor module.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": 10,
+      "name": "server.bes.jdbc.statement-cache-size",
+      "description": "The number of SQL statements to be cached using the\n default caching mechanism (Least Recently Used). The default value is 10.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": -1,
+      "name": "server.bes.jdbc.statement-timeout-in-seconds",
+      "description": "Specifies the length  of  time in seconds after which a\n query that is not completed is terminated.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": true,
+      "name": "server.bes.jdbc.test-on-borrow",
+      "description": "The indication of whether objects will be validated\n before being borrowed from the pool. If the object\n fails to validate, it will be dropped from the pool,\n and we will attempt to borrow another. The default value\n is true.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": false,
+      "name": "server.bes.jdbc.test-while-idle",
+      "description": "The indication of  whether  objects  will be  validated\n when the pool is idle. The default value is false.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "name": "server.bes.jdbc.url",
+      "description": "Specifies  the URL  for this  connection pool. Although\n this is not a standard property, it is commonly used.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "name": "server.bes.jdbc.username",
+      "description": "Specifies the user name for connecting to the database.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": 120,
+      "name": "server.bes.jdbc.validate-atmost-once-period-in-seconds",
+      "description": "Time in seconds.During this time,it will validate the\n connection only once and do good to reducing the number\n of connection validation requests.The default value is 120.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "name": "server.bes.jdbc.validation-query",
+      "description": "The SQL query that will be used to validate connections\n from this pool before returning them to the caller. if\n specified, this query must be an SQL select statement\n that returns at least one row.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesJdbcResource",
+      "defaultValue": 0,
+      "name": "server.bes.jdbc.validation-query-timeout",
+      "description": "The timeout in seconds before a connection validation\n queries fail.A value equals to zero will disable this\n feature.Defaults to 0.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "name": "server.bes.keep-alive-timeout",
+      "description": "The number of seconds this Connector will wait for another\n HTTP request before closing the connection. The default value is\n to use the value that has been set for the connectionTimeout\n attribute. Use a value of -1 to indicate no (i.e. infinite)\n timeout.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "defaultValue": 0,
+      "name": "server.bes.max-connections",
+      "description": "Maximum number of connections that the server accepts and processes at any\n given time. Once the limit has been reached, the operating system may still\n accept connections based on the \"acceptCount\" property.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "defaultValue": 0,
+      "name": "server.bes.max-http-header-size",
+      "description": "Maximum size, in bytes, of the HTTP message header.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "defaultValue": 0,
+      "name": "server.bes.max-http-post-size",
+      "description": "Maximum size, in bytes, of the HTTP post content.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "defaultValue": 0,
+      "name": "server.bes.max-idle-time",
+      "description": "The number of milliseconds before an idle thread shutdown.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "name": "server.bes.max-keep-alive-requests",
+      "description": "The maximum number of HTTP requests which can be pipelined until\n the connection is closed by the server. Setting this attribute to\n 1 will disable HTTP\/1.0 keep-alive, as well as HTTP\/1.1 keep-alive\n and pipelining. Setting this to -1 will allow an unlimited amount\n of pipelined or keep-alive HTTP requests. If not specified, this\n attribute is set to 100.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "defaultValue": 10000,
+      "name": "server.bes.max-parameter-count",
+      "description": "The maximum number of parameter and value pairs (GET plus POST)\n which will be automatically parsed by the container. Parameter and\n value pairs beyond this limit will be ignored. A value of less\n than 0 means no limit. If not specified, a default of 10000 is\n used. Note that FailedRequestFilter filter can be used to reject\n requests that hit the limit.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "defaultValue": 0,
+      "name": "server.bes.max-queue-size",
+      "description": "The maximum number of runnable tasks that can queue up awaiting\n execution before we reject them.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "defaultValue": 0,
+      "name": "server.bes.max-threads",
+      "description": "Maximum number of worker threads.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "defaultValue": 0,
+      "name": "server.bes.min-spare-threads",
+      "description": "Minimum number of worker threads.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "defaultValue": "X-Forwarded-Port",
+      "name": "server.bes.port-header",
+      "description": "Name of the HTTP header used to override the original port value.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "name": "server.bes.protocol-header",
+      "description": "Header that holds the incoming protocol, usually named \"X-Forwarded-Proto\".",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "defaultValue": "https",
+      "name": "server.bes.protocol-header-https-value",
+      "description": "Value of the protocol header indicating whether the incoming request uses SSL.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "name": "server.bes.redirect-context-root",
+      "description": "Whether requests to the context root should be redirected by appending a \/ to\n the path.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "name": "server.bes.remote-ip-header",
+      "description": "Name of the HTTP header from which the remote IP is extracted. For instance,\n `X-FORWARDED-FOR`.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "defaultValue": "ISO-8859-1",
+      "name": "server.bes.request-character-encoding",
+      "description": "The default character encoding of request, default value is ISO-8859-1.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Resource",
+      "defaultValue": false,
+      "name": "server.bes.resource.allow-linking",
+      "description": "If the value of this flag is true, symlinks will be allowed inside\n the web application , pointing to resources inside or  outside the\n web application base path.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Resource",
+      "name": "server.bes.resource.cache-object-max-size",
+      "description": "The maximum size of each static resource cache in kilobytes.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Resource",
+      "name": "server.bes.resource.cache-ttl",
+      "description": "Time-to-live of the static resource cache.",
+      "type": "java.time.Duration"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Resource",
+      "defaultValue": true,
+      "name": "server.bes.resource.caching-allowed",
+      "description": "Cache for static resources or not.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes$Resource",
+      "defaultValue": false,
+      "name": "server.bes.resource.track-locked-files",
+      "description": "Whether to track the locked files, if it is not closed after accessing the static resource,\n it will be recorded and forced to close when the application server stops.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "defaultValue": "ISO-8859-1",
+      "name": "server.bes.response-character-encoding",
+      "description": "The default character encoding of response, default value is ISO-8859-1.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "defaultValue": 0,
+      "name": "server.bes.stuck-thread-max-time",
+      "description": "Minimum duration in seconds after which a thread is considered\n stuck. If set to 0, the detection is disabled. Default value is 0.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "defaultValue": 0,
+      "name": "server.bes.stuck-thread-timer-interval",
+      "description": "The time interval in seconds of checking whether a thread is stuck.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "name": "server.bes.uri-encoding",
+      "description": "Character encoding to use to decode the URI.",
+      "type": "java.nio.charset.Charset"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "defaultValue": true,
+      "name": "server.bes.use-body-encoding-for-uri",
+      "description": "The flag if use the body encoding for URI, default value is true.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "name": "server.bes.use-relative-redirects",
+      "description": "Whether HTTP 1.1 and later location headers generated by a call to sendRedirect\n will use relative or absolute redirects.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Bes",
+      "name": "server.bes.xpowered-by",
+      "description": "Set this attribute to true to cause BES to advertise support for\n the Servlet specification using the header recommended in the\n specification. The default value is false.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesCompression",
+      "defaultValue": false,
+      "name": "server.compression.enabled",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesCompression",
+      "name": "server.compression.excluded-user-agents",
+      "type": "java.lang.String[]"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesCompression",
+      "defaultValue": [
+        "text\/html",
+        "text\/xml",
+        "text\/plain",
+        "text\/css",
+        "text\/javascript",
+        "application\/javascript",
+        "application\/json",
+        "application\/xml"
+      ],
+      "name": "server.compression.mime-types",
+      "type": "java.lang.String[]"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesCompression",
+      "defaultValue": 2048,
+      "name": "server.compression.min-response-size",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties",
+      "name": "server.connection-timeout",
+      "description": "Time that connectors wait for another HTTP request before closing the connection.\n When not set, the connector's container-specific default is used. Use a value of -1\n to indicate no (that is, an infinite) timeout.",
+      "type": "java.time.Duration"
+    },
+    {
+      "sourceType": "org.springframework.boot.autoconfigure.web.ErrorProperties",
+      "name": "server.error.include-exception",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.autoconfigure.web.ErrorProperties",
+      "name": "server.error.include-stacktrace",
+      "type": "org.springframework.boot.autoconfigure.web.ErrorProperties$IncludeStacktrace"
+    },
+    {
+      "sourceType": "org.springframework.boot.autoconfigure.web.ErrorProperties",
+      "name": "server.error.path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties",
+      "name": "server.gmssl-enabled",
+      "description": "Use this attribute to enable GMSSL traffic on a connector. To turn\n on GMSSL handshake\/encryption\/decryption on a connector set this\n value to true. The default value is false. When turning this value\n true you will want to set the scheme and the secure attributes as\n well to pass the correct request.getScheme() and request.isSecure()\n values to the servlets See GMSSL Support for more information.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.server.Http2",
+      "name": "server.http2.enabled",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties",
+      "name": "server.io-mode",
+      "description": "Use this attribute to set the io mode of the connector, the values\n are NIO and AIO, default is AIO.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties",
+      "defaultValue": 0,
+      "name": "server.max-http-header-size",
+      "description": "Maximum size, in bytes, of the HTTP message header.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties",
+      "name": "server.port",
+      "description": "Server HTTP port.",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties",
+      "name": "server.server-header",
+      "description": "Value to use for the Server response header (if empty, no header is sent).",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Servlet",
+      "defaultValue": "application",
+      "name": "server.servlet.application-display-name",
+      "description": "Display name of the application.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Servlet",
+      "name": "server.servlet.context-parameters",
+      "description": "Servlet context init parameters.",
+      "type": "java.util.Map<java.lang.String,java.lang.String>"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Servlet",
+      "name": "server.servlet.context-path",
+      "description": "Context path of the application.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.servlet.server.Jsp",
+      "name": "server.servlet.jsp.class-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.servlet.server.Jsp",
+      "name": "server.servlet.jsp.init-parameters",
+      "type": "java.util.Map<java.lang.String,java.lang.String>"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.servlet.server.Jsp",
+      "name": "server.servlet.jsp.registered",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties$Servlet",
+      "defaultValue": "\/",
+      "name": "server.servlet.path",
+      "description": "Path of the main dispatcher servlet.",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.servlet.server.Session$Cookie",
+      "name": "server.servlet.session.cookie.comment",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.servlet.server.Session$Cookie",
+      "name": "server.servlet.session.cookie.domain",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.servlet.server.Session$Cookie",
+      "name": "server.servlet.session.cookie.http-only",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.servlet.server.Session$Cookie",
+      "name": "server.servlet.session.cookie.max-age",
+      "type": "java.time.Duration"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.servlet.server.Session$Cookie",
+      "name": "server.servlet.session.cookie.name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.servlet.server.Session$Cookie",
+      "name": "server.servlet.session.cookie.path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.servlet.server.Session$Cookie",
+      "name": "server.servlet.session.cookie.secure",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.servlet.server.Session",
+      "name": "server.servlet.session.persistent",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.servlet.server.Session",
+      "name": "server.servlet.session.store-dir",
+      "type": "java.io.File"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.servlet.server.Session",
+      "name": "server.servlet.session.timeout",
+      "type": "java.time.Duration"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.servlet.server.Session",
+      "name": "server.servlet.session.tracking-modes",
+      "type": "java.util.Set<org.springframework.boot.web.servlet.server.Session.SessionTrackingMode>"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.server.Ssl",
+      "name": "server.ssl.ciphers",
+      "type": "java.lang.String[]"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.server.Ssl",
+      "name": "server.ssl.client-auth",
+      "type": "org.springframework.boot.web.server.Ssl$ClientAuth"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.server.Ssl",
+      "name": "server.ssl.enabled",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.server.Ssl",
+      "name": "server.ssl.enabled-protocols",
+      "type": "java.lang.String[]"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.server.Ssl",
+      "name": "server.ssl.key-alias",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.server.Ssl",
+      "name": "server.ssl.key-password",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.server.Ssl",
+      "name": "server.ssl.key-store",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.server.Ssl",
+      "name": "server.ssl.key-store-password",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.server.Ssl",
+      "name": "server.ssl.key-store-provider",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.server.Ssl",
+      "name": "server.ssl.key-store-type",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.server.Ssl",
+      "name": "server.ssl.protocol",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.server.Ssl",
+      "name": "server.ssl.trust-store",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.server.Ssl",
+      "name": "server.ssl.trust-store-password",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.server.Ssl",
+      "name": "server.ssl.trust-store-provider",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "org.springframework.boot.web.server.Ssl",
+      "name": "server.ssl.trust-store-type",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties",
+      "name": "server.tcp-no-delay",
+      "description": "If set to true, the TCP_NO_DELAY option will be set on the server\n socket, which improves performance under most circumstances. This\n is set to true by default.",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.bes.enterprise.springboot.autoconfigure.BesProperties",
+      "name": "server.use-forward-headers",
+      "description": "Whether X-Forwarded-* headers should be applied to the HttpRequest.",
+      "type": "java.lang.Boolean"
+    }
+  ]
+}

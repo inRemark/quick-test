@@ -1,0 +1,43 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test_db?useUnicode=true&characterEncoding=utf8
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: pwd@root
+      poolName: hikari-pool
+      # connectionInitSql: SELECT 1
+      # 是客户端等待连接池连接的最大毫秒数 默认30000（30 秒） >=250mils
+      connectionTimeout: 3000000
+      # 配置最大池大小， 包括空闲连接和使用中连接， 默认10
+      maximumPoolSize: 3
+      # 最小空闲连接数。如果空闲连接低于此值并且池中的总连接数小于maximumPoolSize，HikariCP 将尽最大努力快速有效地添加额外连接
+      # 官方建议==maximumPoolSize， 不建议自定义
+      minimumIdle: 3
+      # 自定义minimumIdle < maximumPoolSize时有效， 允许连接在连接池中空闲的最长时间默认600000毫秒 (600秒)
+      #      idleTimeout: 600000
+      # 连接池中连接关闭后的最长生命周期（以毫秒为单位）
+      # 使用中的连接永远不会退役，只有当它关闭时才会在最长生命周期后删除。默认30分钟1800000， 最小值为30000ms（30秒）
+      maxLifetime: 30000
+      # 此值必须小于maxLifetime值 此属性控制HikariCP尝试保持（空闲）连接活动的频率，以防止数据库或网络基础设施超时, 默认0
+      # keepaliveTime: 0
+      # 配置从池返回的连接的默认自动提交行为, 默认值为true
+      autoCommit: true
+      #      keepaliveTime: 1
+      #      registerMbeans: true # 开启JMX
+      # 测试sql, 如果您的驱动程序支持JDBC4，强烈建议不要设置此属性
+      #      connectionTestQuery: select 1
+      # 测试连接活动性的最长时间。该值必须小于connectionTimeout。可接受的最低验证超时为 250 毫秒
+      #      validationTimeout: 5000
+      # 此属性控制在记录指示可能的连接泄漏的消息之前连接可以脱离池的时间。值0表示泄漏检测已禁用, 可接受值为 2000（2 秒）
+  #      leakDetectionThreshold: 0
+
+
+mybatis:
+  typeAliasesPackage: com.example
+  mapperLocations: classpath*:mapper/**/*Mapper.xml
+
+mapper:
+  not-empty: true
+  identity: MYSQL
+

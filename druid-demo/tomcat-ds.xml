@@ -1,0 +1,22 @@
+<Context  docBase="/app/tomcat/apache-tomcat-8.5.93/webapps/demo" debug="0" privileged="true">
+    <!--
+    其中name指定数据源在容器中的JNDI名
+    driverClassName指定连接数据库的驱动
+    url指定数据库服务的URL
+    username指定连接数据库的用户名
+    password指定连接数据库的密码
+    maxActive指定数据源最大活动连接数
+    maxIdle指定数据池中最大的空闲连接数
+    maxWait指定数据池中最大等待获取连接的客户端
+    type="javax.sql.DataSource"
+    -->
+    <Resource name="jdbc/dsjndi" auth="Container"
+              type="com.alibaba.druid.pool.DruidDataSource"
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              url="jdbc:mysql://49.232.211.50:33066/batis"
+              username="root"
+              password="pwd@Root317"
+              maxActive="3"
+              maxIdle="3"
+              maxWait="600000"/>
+</Context>
